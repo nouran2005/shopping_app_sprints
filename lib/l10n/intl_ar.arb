@@ -1,0 +1,22 @@
+{
+    "sign_in": "تسجيل الدخول",
+    "sign_up": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "full_name": "الاسم الكامل",
+    "welcome_back": "مرحبًا بعودتك!",
+    "sign_in_successfully": "تم تسجيل الدخول بنجاح",
+    "close": "إغلاق",
+    "products": "المنتجات",
+    "special_offer": "عروض خاصة",
+    "add_to_cart": "أضف إلى السلة",
+    "create_account": "إنشاء حساب",
+    "sneakers": "أحذية رياضية",
+    "handbag": "حقيبة يد",
+    "wristwatch": "ساعة يد",
+    "whitetshirt": "قميص أبيض",
+    "added_to_cart": "تمت الإضافة إلى السلة",
+    "succcessfully": "بنجاح"
+
+}
