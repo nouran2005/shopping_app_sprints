@@ -49,66 +49,70 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      elevation: 10,
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                S.of(context).create_account,
-                style: const TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purple,
-                ),
+    return SafeArea(
+      child: SingleChildScrollView(  
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          elevation: 10,
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    S.of(context).create_account,
+                    style: const TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  SignUpField(
+                    controller: _nameCtrl,
+                    label: S.of(context).full_name,
+                    validator: (val) {
+                      if (val == null || val.isEmpty) return "Enter your name";
+                      if (val[0] != val[0].toUpperCase()) {
+                        return "First letter must be uppercase";
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  SignUpField(
+                    controller: _emailCtrl,
+                    label: S.of(context).email,
+                    validator: (val) =>
+                        val != null && val.contains('@')
+                            ? null
+                            : "Enter valid email",
+                  ),
+                  const SizedBox(height: 16),
+                  SignUpField(
+                    controller: _passCtrl,
+                    label: S.of(context).password,
+                    isPassword: true,
+                    validator: (val) =>
+                        val != null && val.length >= 6
+                            ? null
+                            : "Password must be at least 6 chars",
+                  ),
+                  const SizedBox(height: 16),
+                  SignUpField(
+                    controller: _confirmCtrl,
+                    label: S.of(context).confirm_password,
+                    isPassword: true,
+                    validator: (val) =>
+                        val == _passCtrl.text ? null : "Passwords do not match",
+                  ),
+                  const SizedBox(height: 24),
+                  SignUpButton(onPressed: _submit),
+                ],
               ),
-              const SizedBox(height: 20),
-              SignUpField(
-                controller: _nameCtrl,
-                label: S.of(context).full_name,
-                validator: (val) {
-                  if (val == null || val.isEmpty) return "Enter your name";
-                  if (val[0] != val[0].toUpperCase()) {
-                    return "First letter must be uppercase";
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 16),
-              SignUpField(
-                controller: _emailCtrl,
-                label: S.of(context).email,
-                validator: (val) =>
-                    val != null && val.contains('@')
-                        ? null
-                        : "Enter valid email",
-              ),
-              const SizedBox(height: 16),
-              SignUpField(
-                controller: _passCtrl,
-                label: S.of(context).password,
-                isPassword: true,
-                validator: (val) =>
-                    val != null && val.length >= 6
-                        ? null
-                        : "Password must be at least 6 chars",
-              ),
-              const SizedBox(height: 16),
-              SignUpField(
-                controller: _confirmCtrl,
-                label: S.of(context).confirm_password,
-                isPassword: true,
-                validator: (val) =>
-                    val == _passCtrl.text ? null : "Passwords do not match",
-              ),
-              const SizedBox(height: 24),
-              SignUpButton(onPressed: _submit),
-            ],
+            ),
           ),
         ),
       ),
