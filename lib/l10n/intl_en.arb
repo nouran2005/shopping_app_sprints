@@ -1,0 +1,24 @@
+{
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "full_name": "Full Name",
+    "welcome_back": "Welcome Back!",
+    "sign_in_successfully": "Account sign-in successfully",
+    "close": "Close",
+    "products": "Products",
+    "special_offer": "Special Offers",
+    "add_to_cart": "Add to Cart",
+    "create_account": "Create Account",
+    "sneakers": "Sneakers",
+    "handbag": "Hand Bag",
+    "wristwatch": "Wrist Watch",
+    "whitetshirt": "White T-Shirt",
+    "added_to_cart": "Added to cart",
+    "succcessfully": "Successfully"
+
+
+
+}
